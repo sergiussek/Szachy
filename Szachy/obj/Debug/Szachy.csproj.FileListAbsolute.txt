@@ -1,0 +1,12 @@
+C:\Users\Krzysiek\Desktop\Szachy\Szachy\Szachy\obj\Debug\Szachy.csprojResolveAssemblyReference.cache
+C:\Users\Krzysiek\Desktop\Szachy\Szachy\Szachy\bin\Debug\Szachy.exe.config
+C:\Users\Krzysiek\Desktop\Szachy\Szachy\Szachy\bin\Debug\Szachy.exe
+C:\Users\Krzysiek\Desktop\Szachy\Szachy\Szachy\bin\Debug\Szachy.pdb
+C:\Users\Krzysiek\Desktop\Szachy\Szachy\Szachy\obj\Debug\Szachy.exe
+C:\Users\Krzysiek\Desktop\Szachy\Szachy\Szachy\obj\Debug\Szachy.pdb
+C:\Users\sergi\Desktop\Szachy\Szachy\bin\Debug\Szachy.exe.config
+C:\Users\sergi\Desktop\Szachy\Szachy\bin\Debug\Szachy.exe
+C:\Users\sergi\Desktop\Szachy\Szachy\bin\Debug\Szachy.pdb
+C:\Users\sergi\Desktop\Szachy\Szachy\obj\Debug\Szachy.csprojResolveAssemblyReference.cache
+C:\Users\sergi\Desktop\Szachy\Szachy\obj\Debug\Szachy.exe
+C:\Users\sergi\Desktop\Szachy\Szachy\obj\Debug\Szachy.pdb
