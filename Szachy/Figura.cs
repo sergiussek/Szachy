@@ -1,80 +1,93 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Szachy {
-	abstract class Figura {
-		public enum Kolory : int {
-			BIAŁY = 0,
-			CZARNY = 1
-		};
+    public enum Kolory
+    {
+        BIAŁY,
+        CZARNY
+    }
 
-		public string nazwa;
-		public int x;
-		public int y;
-		public int kolor;
+    public enum TypFigury
+    {
+        GONIEC,
+        HETMAN,
+        KRÓL,
+        WIEŻA
+    }
 
-		public Figura(object _x, int y, int kolor) {
-			int x = ConvertPosition(_x);
+    public abstract class Figura {
 
-			SetPozycja(x, y);
-			SetKolor(kolor);
-		}
+        public delegate void Delegat();
+        public event Delegat Event;
 
-		public string GetNazwa() {
-			return nazwa;
-		}
+        private Kolory kolor;
+        private string nazwa;
+        private char x;
+        private int y;
 
-		public int GetX() {
-			return x;
-		}
+        public char X
+        {
+            get
+            {
+                return x;
+            }
+            set
+            {
+                x = value;
+                if (Event != null) Event();
+            }
+        }
 
-		public int GetY() {
-			return y;
+        public int Y
+        {
+            get
+            {
+                return y;
+            }
+            set
+            {
+                y = value;
+                if (Event != null) Event();
+            }
+        }
+
+        public Kolory Kolor
+        {
+            get { return kolor; }
+            set { kolor = value; }
+        }
+
+        public string Nazwa
+        {
+            get { return nazwa; }
+            set { nazwa = value; }
+        }
+
+
+        public Figura(char x, int y, Kolory kolor)
+        {
+            X = x;
+            Y = y;
+			Kolor = kolor;
+            Event += OnEvent;
 		}
 
 		public string GetPozycjaString() {
-			// ASCII char
-			int x = GetX() + 64;
-			int y = GetY();
-
-			return String.Format("{0}{1}", Convert.ToChar(x), y);
-		}
-
-		public int getKolor() {
-			return kolor;
+			return $"{X}{Y}";
 		}
 
 		public string GetKolorString() {
-			switch (getKolor()) {
-				case (int) Kolory.BIAŁY:
-					return "biały";
-				case (int) Kolory.CZARNY:
-					return "czarny";
-			}
-
-			return "";
-		}
-
-		public void SetPozycja(int x, int y) {
-			this.x = x;
-			this.y = y;
-		}
-
-		public void SetKolor(int kolor) {
-			this.kolor = kolor;
-		}
+            return Enum.GetName(typeof(Kolory), Kolor);
+        }
 
 		public override string ToString() {
-			return String.Format("Figura: {0}, kolor: {1}, pozycja: {2}", GetNazwa(), GetKolorString(), GetPozycjaString());
+			return $"Figura: {Nazwa}, kolor: {GetKolorString()}, pozycja: {GetPozycjaString()}";
 		}
 
-		public virtual bool WykonajRuch(object _x, int y) {
-			int x = ConvertPosition(_x);
+		public virtual bool SprawdzRuch(char x, int y) {
+			int intX = ConvertPosition(x);
 
-			if (x > 8 || x < 1 || y > 8 || y < 1) {
+			if ((intX > 8 || intX < 1) || (y > 8 || y < 1)) {
 				return false;
 			}
 
@@ -85,16 +98,18 @@ namespace Szachy {
 			return true;
 		}
 
-		public int ConvertPosition(object pos) {
-			if (pos is char) {
-				return (int) Char.ToUpper(Convert.ToChar(pos)) - 64;
-			}
-			
-			return Convert.ToInt32(pos);
+        public int ConvertPosition(char pos)
+        {
+            return (int)Char.ToUpper(pos) - 64;
+        }
+
+        public bool IsEqualPosition(int x, int y) {
+			return X == x && Y == y;
 		}
 
-		public bool IsEqualPosition(int x, int y) {
-			return GetX() == x && GetY() == y;
-		}
+        private void OnEvent()
+        {
+            Console.WriteLine($"{Nazwa} został/a przesunięty/a");
+        }
 	}
 }

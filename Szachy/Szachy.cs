@@ -3,22 +3,16 @@
 namespace Szachy {
 	class Szachy {
 		static void Main(string[] args) {
-			Figura król = new Król('B', 2, 0);
-			Figura hetman = new Hetman('D', 4, 0);
-			Figura goniec = new Goniec('A', 1, 0);
-			Figura wieża = new Wieża('H', 1, 0);
+            Szachownica szachownica = Szachownica.SzachownicaObject;
 
-			// testy
-			Console.WriteLine(król.WykonajRuch('B', 1)); // pion
-			Console.WriteLine(król.WykonajRuch('A', 2)); // poziom
-			Console.WriteLine(król.WykonajRuch('A', 1)); // ukos
-			Console.WriteLine(król.WykonajRuch('G', 1)); // zły ruch
+            Figura król = WykonajFigure.Instancja(TypFigury.KRÓL, 'B', 2, Kolory.BIAŁY);
+            Figura hetman = WykonajFigure.Instancja(TypFigury.HETMAN, 'D', 4, Kolory.BIAŁY);
+            Figura goniec = WykonajFigure.Instancja(TypFigury.GONIEC, 'A', 1, Kolory.BIAŁY);
+            Figura wieża = WykonajFigure.Instancja(TypFigury.WIEŻA, 'H', 1, Kolory.BIAŁY);
 
-
-			Console.WriteLine(hetman.WykonajRuch('D', 8)); // pion
-			Console.WriteLine(hetman.WykonajRuch('A', 4)); // poziom
-			Console.WriteLine(hetman.WykonajRuch('F', 6)); // ukos
-			Console.WriteLine(hetman.WykonajRuch('A', 8)); // zły ruch
+            szachownica[król, 'B', 1] = król.ToString();
+            szachownica.WyswietlSzachownice();
+            Console.WriteLine("Są " + szachownica.IlośćFigur() + " figury/a na szachownicy");
 
 			Console.ReadKey();
 		}

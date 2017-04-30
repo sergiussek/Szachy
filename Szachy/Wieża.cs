@@ -2,22 +2,24 @@
 
 namespace Szachy {
 	class Wieża : Figura {
-		public Wieża(object x, int y, int kolor) : base(x, y, kolor) {
-			nazwa = "Wieża";
+		public Wieża(char x, int y, Kolory kolor)
+            : base(x, y, kolor)
+        {
+			Nazwa = "Wieża";
 		}
 
-		public override bool WykonajRuch(object _x, int y) {
-			int x = ConvertPosition(_x);
+		public override bool SprawdzRuch(char x, int y) {
+			int intX = ConvertPosition(x);
 
-			if (!base.WykonajRuch(x, y)) {
+			if (!base.SprawdzRuch(x, y)) {
 				return false;
 			}
 
-			int posX = GetX();
-			int posY = GetY();
+			int posX = intX;
+			int posY = y;
 
 			int diffY = Math.Abs(y - posY);
-			int diffX = Math.Abs(x - posX);
+			int diffX = Math.Abs(ConvertPosition(X) - posX);
 
 			// move horizontaly
 			if (diffX == 0 && diffY != 0) {

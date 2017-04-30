@@ -10,3 +10,9 @@ C:\Users\sergi\Desktop\Szachy\Szachy\bin\Debug\Szachy.pdb
 C:\Users\sergi\Desktop\Szachy\Szachy\obj\Debug\Szachy.csprojResolveAssemblyReference.cache
 C:\Users\sergi\Desktop\Szachy\Szachy\obj\Debug\Szachy.exe
 C:\Users\sergi\Desktop\Szachy\Szachy\obj\Debug\Szachy.pdb
+D:\_DK\GitHub\Others\Szachy\Szachy\bin\Debug\Szachy.exe.config
+D:\_DK\GitHub\Others\Szachy\Szachy\obj\Debug\Szachy.exe
+D:\_DK\GitHub\Others\Szachy\Szachy\obj\Debug\Szachy.pdb
+D:\_DK\GitHub\Others\Szachy\Szachy\bin\Debug\Szachy.exe
+D:\_DK\GitHub\Others\Szachy\Szachy\bin\Debug\Szachy.pdb
+D:\_DK\GitHub\Others\Szachy\Szachy\obj\Debug\Szachy.csprojResolveAssemblyReference.cache

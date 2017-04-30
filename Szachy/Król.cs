@@ -2,25 +2,27 @@
 
 namespace Szachy {
 	class Król : Figura {
-		public Król(object x, int y, int kolor) : base(x, y, kolor) {
-			nazwa = "Król";
+		public Król(char x, int y, Kolory kolor) 
+            : base(x, y, kolor)
+        {
+            Nazwa = "Król";
 		}
 
-		public override bool WykonajRuch(object _x, int y) {
-			int x = ConvertPosition(_x);
+		public override bool SprawdzRuch(char x, int y) {
+			int intX = ConvertPosition(x);
 
-			if (!base.WykonajRuch(x, y)) {
+			if (!base.SprawdzRuch(x, y)) {
 				return false;
 			}
 
-			int posX = GetX();
-			int posY = GetY();
+			int posX = intX;
+			int posY = y;
 
-			int diffY = Math.Abs(y - posY);
-			int diffX = Math.Abs(x - posX);
+			int diffY = Math.Abs(Y - posY);
+			int diffX = Math.Abs(ConvertPosition(X) - posX);
 
-			// one move horizontaly
-			if (diffX == 1 && diffY == 0) {
+            // one move horizontaly
+            if (diffX == 1 && diffY == 0) {
 				return true;
 			}
 

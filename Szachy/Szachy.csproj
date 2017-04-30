@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Szachownica.cs" />
     <Compile Include="Figura.cs" />
     <Compile Include="Goniec.cs" />
     <Compile Include="Król.cs" />
@@ -49,6 +50,7 @@
     <Compile Include="Szachy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Wieża.cs" />
+    <Compile Include="WykonajFigure.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
