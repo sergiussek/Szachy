@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace Szachy {
+<<<<<<< HEAD
     public sealed class Szachownica
     {
         private static Szachownica szachownica = new Szachownica();
@@ -49,19 +50,52 @@ namespace Szachy {
         public void WyswietlSzachownice()
         {
             int limit = rozmiarSzachownicy;
+=======
+    sealed class Szachownica
+    {
+        private string[,] szachownica;
+
+        public Szachownica()
+        {
+            szachownica = new string[8, 8];
+		}
+
+        public string this[char x, int y]
+        {
+            get
+            {
+                return szachownica[x - 65, y];
+            }
+            set
+            {
+                szachownica[x - 65, y] = value;
+            }
+        }
+
+        public void PrintSzachownica()
+        {
+            int limit = (int) Math.Sqrt(szachownica.Length);
+>>>>>>> origin/master
 
             for (int i = 0; i < limit ; i++)
             {
                 for(int j = 0; j < limit; j++)
                 {
+<<<<<<< HEAD
                     if (!string.IsNullOrEmpty(szachownicaArray[i, j]))
                     {
                         Console.WriteLine(szachownicaArray[i, j] + "\n");
+=======
+                    if (!string.IsNullOrEmpty(szachownica[i, j]))
+                    {
+                        Console.WriteLine(szachownica[i, j] + "\n");
+>>>>>>> origin/master
                     }
                 }
             }
         }
 	}
+<<<<<<< HEAD
 
     public static class SzachownicaRozszerzenie
     {
@@ -80,4 +114,6 @@ namespace Szachy {
             return count;
         }
     }
+=======
+>>>>>>> origin/master
 }

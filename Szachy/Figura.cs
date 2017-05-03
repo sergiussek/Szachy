@@ -5,6 +5,7 @@ namespace Szachy {
     {
         BIAŁY,
         CZARNY
+<<<<<<< HEAD
     }
 
     public enum TypFigury
@@ -36,10 +37,25 @@ namespace Szachy {
                 x = value;
                 if (Event != null) Event();
             }
+=======
+    };
+
+    abstract class Figura {
+        private string nazwa;
+        private char x;
+        private int y;
+        private Kolory kolor;
+
+        public char X
+        {
+            get { return x; }
+            set { x = value; }
+>>>>>>> origin/master
         }
 
         public int Y
         {
+<<<<<<< HEAD
             get
             {
                 return y;
@@ -49,6 +65,10 @@ namespace Szachy {
                 y = value;
                 if (Event != null) Event();
             }
+=======
+            get { return y; }
+            set { y = value; }
+>>>>>>> origin/master
         }
 
         public Kolory Kolor
@@ -69,7 +89,10 @@ namespace Szachy {
             X = x;
             Y = y;
 			Kolor = kolor;
+<<<<<<< HEAD
             Event += OnEvent;
+=======
+>>>>>>> origin/master
 		}
 
 		public string GetPozycjaString() {
